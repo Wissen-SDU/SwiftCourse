@@ -10,19 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-    var welcomeLabel:UILabel!
-    
+    @IBOutlet weak var lblWelcome: UILabel!
+    @IBOutlet weak var txtName: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        lblWelcome.text = ""
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func buttonTapped(sender: UIButton) {
+        lblWelcome.text = "Hosgeldin: \(txtName.text)"
     }
+
+    
 
 
 }
