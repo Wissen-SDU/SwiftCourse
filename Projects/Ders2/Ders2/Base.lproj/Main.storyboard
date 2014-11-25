@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--FirstVC-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="FirstVC" customModule="Ders2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iK-zv-Pwj">
+                                <rect key="frame" x="240" y="120" width="120" height="60"/>
+                                <color key="backgroundColor" red="0.53413207225947801" green="1" blue="0.50354963608699443" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Rsb-rs-q4o"/>
+                                    <constraint firstAttribute="width" constant="120" id="fD9-fH-D1n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="24"/>
+                                <state key="normal" title="2'ye Geç">
+                                    <color key="titleColor" red="0.2624123782167645" green="0.0" blue="0.48628826530612246" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4m2-gk-ZDN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83488456592935112" blue="0.82848226188512997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="3iK-zv-Pwj" secondAttribute="centerX" id="7Z9-3U-izp"/>
+                            <constraint firstItem="3iK-zv-Pwj" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="NON-L6-veA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="17T-dU-Ko8" kind="show" identifier="FirstToSecond" id="bjH-cS-v7X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-622" y="-127"/>
+        </scene>
+        <!--SecondVC-->
+        <scene sceneID="Zov-uW-h4l">
+            <objects>
+                <viewController id="17T-dU-Ko8" customClass="SecondVC" customModule="Ders2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pbb-Cw-X5u"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z23-Jz-kdf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qfV-G5-U4m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOb-ck-i2y">
+                                <rect key="frame" x="56" y="60" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.48628826530612246" green="0.029892707627922867" blue="0.054311348204457738" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="lGS-Dz-zNf"/>
+                                    <constraint firstAttribute="height" constant="50" id="ods-wd-ZGM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Geri">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XsW-Cc-KKF" kind="unwind" unwindAction="backToFirst:" id="cb1-qQ-FQ4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.6674758349072436" green="0.70061505667909696" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zOb-ck-i2y" firstAttribute="leading" secondItem="qfV-G5-U4m" secondAttribute="leadingMargin" constant="40" id="Q8z-b2-Ded"/>
+                            <constraint firstItem="zOb-ck-i2y" firstAttribute="top" secondItem="pbb-Cw-X5u" secondAttribute="bottom" constant="40" id="ayv-DX-Bes"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AzS-B2-rav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XsW-Cc-KKF" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="191" y="-127"/>
+        </scene>
+    </scenes>
+</document>

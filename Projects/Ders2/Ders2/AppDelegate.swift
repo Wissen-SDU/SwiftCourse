@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Ders1
+//  Ders2
 //
-//  Created by Suleyman Calik on 24.11.2014.
+//  Created by Suleyman Calik on 25.11.2014.
 //  Copyright (c) 2014 Wissen. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.        
+        // Override point for customization after application launch.
         return true
     }
 
