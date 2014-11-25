@@ -42,10 +42,14 @@ class ViewController: UIViewController {
         maviView.backgroundColor = UIColor.blueColor()
         maviView.tag = 10
         maviView.addTarget(self, action: "viewTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        maviView.clipsToBounds = true
+        maviView.layer.cornerRadius = maviRect.width / 2
+        
         view.addSubview(maviView)
         
         
-        var redRect = CGRect(x: 20, y: 20, width: 100, height: 100)
+        var redRect = CGRect(x: 20, y: 20, width: 300, height: 300)
         var redView = UIControl()
         redView.frame = redRect
         redView.backgroundColor = UIColor.redColor()
@@ -69,9 +73,27 @@ class ViewController: UIViewController {
     
     func viewTapped(sender:UIControl) {
         
-        sender.frame = sender.superview!.bounds
+        var originalFrame = sender.frame
         
-//        println(sender.tag)
+        
+        /*
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            sender.frame = sender.superview!.bounds
+
+        }) { (completed) -> Void in
+            
+        }
+        */
+        
+        UIView.animateWithDuration(1, animations: { () -> Void in
+            sender.frame = sender.superview!.bounds
+            }) { (completed) -> Void in
+                
+                UIView.animateWithDuration(1, animations: { () -> Void in
+                    sender.frame = originalFrame
+                })
+        }
+
     }
 
 
