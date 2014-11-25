@@ -9,15 +9,37 @@
 import UIKit
 
 class FirstVC: UIViewController {
-
-
+    
+    @IBOutlet weak var txtUsername: UITextField!
+    
+    
+    // MARK: - Action Methods
+    
     @IBAction func backToFirst(segue:UIStoryboardSegue) {
         println("backToFirst cagrildi!")
     }
-
+    
     @IBAction func buttonTapped(sender: AnyObject) {
         
-        performSegueWithIdentifier("FirstToSecond", sender:nil)
-        
+        if txtUsername.text.isEmpty {
+            // kullaniciya alert popup goster
+        }
+        else {
+            performSegueWithIdentifier("FirstToSecond", sender:nil)
+        }
     }
+    
+    
+    // MARK: - Navigation Methods
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.destinationViewController is SecondVC {
+            var secondScreen = segue.destinationViewController as SecondVC
+            secondScreen.username = txtUsername.text
+        }
+    }
+    
 }
+
+

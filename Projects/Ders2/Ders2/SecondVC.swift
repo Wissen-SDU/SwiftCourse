@@ -10,4 +10,15 @@ import UIKit
 
 class SecondVC : UIViewController {
     
+    var username:String?
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        println("username: \(username)")
+        
+    }
+    
+
 }
