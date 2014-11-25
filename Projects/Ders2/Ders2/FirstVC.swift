@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstVC: UIViewController {
+class FirstVC: UIViewController , UIAlertViewDelegate {
     
     @IBOutlet weak var txtUsername: UITextField!
     
@@ -16,13 +16,17 @@ class FirstVC: UIViewController {
     // MARK: - Action Methods
     
     @IBAction func backToFirst(segue:UIStoryboardSegue) {
-        println("backToFirst cagrildi!")
+        if segue.sourceViewController is SecondVC {
+            var secondScreen:SecondVC = segue.sourceViewController as SecondVC
+            txtUsername.text = secondScreen.username
+        }
     }
     
     @IBAction func buttonTapped(sender: AnyObject) {
         
         if txtUsername.text.isEmpty {
-            // kullaniciya alert popup goster
+            var alertView = UIAlertView(title: "Hata", message: "Mesaj", delegate: self, cancelButtonTitle: "Vazgec", otherButtonTitles: "Tamam gireyim", "Offf")
+            alertView.show()
         }
         else {
             performSegueWithIdentifier("FirstToSecond", sender:nil)
@@ -39,6 +43,15 @@ class FirstVC: UIViewController {
             secondScreen.username = txtUsername.text
         }
     }
+    
+    
+    
+    // MARK: - Alertview Methods
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        println("index: \(buttonIndex)")
+    }
+    
     
 }
 

@@ -85,15 +85,6 @@
                                     <segue destination="XsW-Cc-KKF" kind="unwind" unwindAction="backToFirst:" id="cb1-qQ-FQ4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwb-Fs-hcc">
-                                <rect key="frame" x="56" y="130" width="508" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="zuG-2c-tqj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgy-q0-dZV">
                                 <rect key="frame" x="464" y="60" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.48628826530000002" green="0.029892707630000001" blue="0.054311348199999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -106,19 +97,47 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="17T-dU-Ko8" eventType="touchUpInside" id="6cL-pJ-oOe"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwb-Fs-hcc">
+                                <rect key="frame" x="56" y="130" width="508" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="zuG-2c-tqj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fY1-QY-IUs">
+                                <rect key="frame" x="56" y="130" width="508" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="17T-dU-Ko8" eventType="editingChanged" id="QDL-7V-4F6"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.6674758349072436" green="0.70061505667909696" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Mgy-q0-dZV" firstAttribute="trailing" secondItem="bwb-Fs-hcc" secondAttribute="trailing" id="Brn-ie-zdf"/>
+                            <constraint firstItem="bwb-Fs-hcc" firstAttribute="trailing" secondItem="fY1-QY-IUs" secondAttribute="trailing" id="Fhi-s6-JQa"/>
+                            <constraint firstItem="bwb-Fs-hcc" firstAttribute="top" secondItem="fY1-QY-IUs" secondAttribute="top" id="L0a-fJ-qqn"/>
                             <constraint firstItem="Mgy-q0-dZV" firstAttribute="top" secondItem="zOb-ck-i2y" secondAttribute="top" id="LR5-Ch-PfQ"/>
+                            <constraint firstItem="bwb-Fs-hcc" firstAttribute="leading" secondItem="fY1-QY-IUs" secondAttribute="leading" id="Q1f-jP-7QO"/>
                             <constraint firstItem="zOb-ck-i2y" firstAttribute="leading" secondItem="qfV-G5-U4m" secondAttribute="leadingMargin" constant="40" id="Q8z-b2-Ded"/>
+                            <constraint firstItem="bwb-Fs-hcc" firstAttribute="bottom" secondItem="fY1-QY-IUs" secondAttribute="bottom" id="YKn-Ce-47C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bwb-Fs-hcc" secondAttribute="trailing" constant="20" id="ZOF-Mu-83w"/>
                             <constraint firstItem="zOb-ck-i2y" firstAttribute="top" secondItem="pbb-Cw-X5u" secondAttribute="bottom" constant="40" id="ayv-DX-Bes"/>
                             <constraint firstItem="bwb-Fs-hcc" firstAttribute="leading" secondItem="zOb-ck-i2y" secondAttribute="leading" id="eBL-HW-52D"/>
                             <constraint firstItem="bwb-Fs-hcc" firstAttribute="top" secondItem="zOb-ck-i2y" secondAttribute="bottom" constant="20" id="mnm-2d-EoQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblUsername" destination="bwb-Fs-hcc" id="lQW-lQ-8HX"/>
+                        <outlet property="txtUsername" destination="fY1-QY-IUs" id="QrC-W6-kpJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzS-B2-rav" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="XsW-Cc-KKF" userLabel="Exit" sceneMemberID="exit"/>
