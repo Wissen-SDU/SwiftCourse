@@ -74,15 +74,35 @@ import UIKit
         
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         performSegueWithIdentifier(studentDetailSegue, sender:indexPath)
+    }
+    
+    
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        /*
-        var alertController = UIAlertController(title: "Secilen Ogrenci", message: student.name, preferredStyle: UIAlertControllerStyle.Alert)
-        
-        var cancelAction = UIAlertAction(title: "Tamam", style: UIAlertActionStyle.Cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        
-        presentViewController(alertController, animated: true, completion: nil)
-        */
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            var student = students[indexPath.row]
+            
+            // AlertController olustur
+            var alertController = UIAlertController(title: "Silinecek Ogrenci", message: student.fullName(), preferredStyle: UIAlertControllerStyle.Alert)
+            
+            // Vazgec butonunu olustur
+            var cancelAction = UIAlertAction(title: "Vazgec", style: UIAlertActionStyle.Cancel, handler: { (action) -> Void in
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+            })
+            alertController.addAction(cancelAction)
+            
+            // Sil butonunu olustur
+            var deleteAction = UIAlertAction(title: "Sil", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
+                self.students.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            })
+            alertController.addAction(deleteAction)
+            
+            // alertController'i goster
+            presentViewController(alertController, animated: true, completion: nil)
+        }
         
     }
     
