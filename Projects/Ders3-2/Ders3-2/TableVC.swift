@@ -11,6 +11,9 @@ import UIKit
 
 
 class TableVC: UITableViewController {
+    
+    
+    var katilimcilar = Array<Katilimci>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,12 @@ class TableVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        katilimcilar.append(Katilimci(name: "Ayhan Arisoy", status: true))
+        katilimcilar.append(Katilimci(name: "Fatih Durmaz", status: false))
+        katilimcilar.append(Katilimci(name: "Caner Balim",  status: true))
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,34 +41,42 @@ class TableVC: UITableViewController {
     
     
     @IBAction func switchChanged(onOffSwitch:UISwitch) {
+        var katilimci = katilimcilar[onOffSwitch.tag]
+        katilimci.status = onOffSwitch.on
+        println("katilimci.status: \(katilimci.status)")
         
+        tableView.reloadData()
     }
     
     
 
     // MARK: - Table view data source
+    
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        return katilimcilar.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomCell_ID", forIndexPath: indexPath) as CustomCell
 
-        // Configure the cell...
+        var katilimci = katilimcilar[indexPath.row]
+        cell.lblTitle.text = katilimci.name
+        cell.onOffSwitch.on = katilimci.status
+        cell.onOffSwitch.tag = indexPath.row
+        
+        cell.backgroundColor = katilimci.status ? UIColor.greenColor() : UIColor.grayColor()
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
 
     /*
     // Override to support conditional editing of the table view.
