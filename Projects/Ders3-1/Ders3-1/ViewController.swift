@@ -36,16 +36,34 @@ import Haneke
 
     
     @IBOutlet weak var tableView: UITableView!
-    var students = Array<Student>()
     let studentDetailSegue = "ShowStudentDetail"
+    
+    var students = Array< Array<Student> >()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        for i in 0..<300 {
-            students.append(Student(name: "Ogrenci\(i)", lastName:"soyad", number: 4+i))
+        var students10 = Array<Student>()
+        for i in 0..<10 {
+            students10.append(Student(name: "Ogrenci\(4 + i)", lastName:"soyad", number: 4+i))
         }
+        students.append(students10)
+        
+        
+        var students20 = Array<Student>()
+        for i in 10..<20 {
+            students20.append(Student(name: "Ogrenci\(10 + i)", lastName:"soyad", number: 10+i))
+        }
+        students.append(students20)
+        
+        
+        var students30 = Array<Student>()
+        for i in 20..<30 {
+            students30.append(Student(name: "Ogrenci\(20 + i)", lastName:"soyad", number: 20+i))
+        }
+        students.append(students30)
+        
+        
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -55,23 +73,35 @@ import Haneke
     // MARK: - TableView Methods
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return students[section].count
+    }
+    
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return students.count
+            return "ONLAR"
+        case 1:
+            return "YIRMILER"
+        case 2:
+            return "OTUZLAR"
         default:
-            return 0
+            return ""
         }
     }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         var cell = tableView.dequeueReusableCellWithIdentifier("StudentCell") as UITableViewCell
 
-        var student = students[indexPath.row]
+        var student:Student = students[indexPath.section][indexPath.row]
+        
         cell.textLabel.text = student.fullName()
         cell.detailTextLabel?.text = String(student.number)
         
@@ -102,14 +132,11 @@ import Haneke
     }
     
     
-    
-    
-    
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.Delete {
             
-            var student = students[indexPath.row]
+            var student:Student = students[indexPath.section][indexPath.row]
             
             // AlertController olustur
             var alertController = UIAlertController(title: "Silinecek Ogrenci", message: student.fullName(), preferredStyle: UIAlertControllerStyle.Alert)
@@ -122,7 +149,9 @@ import Haneke
             
             // Sil butonunu olustur
             var deleteAction = UIAlertAction(title: "Sil", style: UIAlertActionStyle.Destructive, handler: { (action) in
-                self.students.removeAtIndex(indexPath.row)
+                
+                self.students[indexPath.section].removeAtIndex(indexPath.row)
+                
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             })
             alertController.addAction(deleteAction)
@@ -139,7 +168,8 @@ import Haneke
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == studentDetailSegue {
             var indexPath = sender as NSIndexPath
-            var student = students[indexPath.row]
+
+            var student:Student = students[indexPath.section][indexPath.row]
             
             var destination = segue.destinationViewController as StudentDetailVC
             destination.student = student
