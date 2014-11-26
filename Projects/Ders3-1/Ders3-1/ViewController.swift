@@ -8,11 +8,6 @@
 
 import UIKit
 
-class Temp {
-    
-//    var student = ViewController.Student(name: "Denme", number: 1)
-}
-
 
  class ViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
@@ -21,7 +16,7 @@ class Temp {
         var lastName:String
         var number:Int
         
-        var _fullName:String?
+        private var _fullName:String?
         
         mutating func fullName() -> String {
             if _fullName == nil {
@@ -34,6 +29,7 @@ class Temp {
     
     @IBOutlet weak var tableView: UITableView!
     var students = Array<Student>()
+    let studentDetailSegue = "ShowStudentDetail"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,14 +72,31 @@ class Temp {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        var student = students[indexPath.row]
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        performSegueWithIdentifier(studentDetailSegue, sender:indexPath)
+        
+        /*
         var alertController = UIAlertController(title: "Secilen Ogrenci", message: student.name, preferredStyle: UIAlertControllerStyle.Alert)
         
         var cancelAction = UIAlertAction(title: "Tamam", style: UIAlertActionStyle.Cancel, handler: nil)
         alertController.addAction(cancelAction)
         
         presentViewController(alertController, animated: true, completion: nil)
+        */
         
+    }
+    
+    
+    // MARK: - Navigation Methods
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == studentDetailSegue {
+            var indexPath = sender as NSIndexPath
+            var student = students[indexPath.row]
+            
+            var destination = segue.destinationViewController as StudentDetailVC
+            destination.student = student
+        }
     }
 
 }

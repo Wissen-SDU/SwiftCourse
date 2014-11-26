@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9br-GU-Vz0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Öğrenciler-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Ders3_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Öğrenciler" id="vXZ-lx-hvc" customClass="ViewController" customModule="Ders3_1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xjG-eG-JZt">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="0.30760843265120519" blue="0.25291367542658327" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -52,17 +52,55 @@
                         <constraints>
                             <constraint firstItem="xjG-eG-JZt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="LF0-Zm-Q4D"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xjG-eG-JZt" secondAttribute="bottom" id="MU4-Yz-cTg"/>
-                            <constraint firstItem="xjG-eG-JZt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="d7h-cg-3vU"/>
+                            <constraint firstItem="xjG-eG-JZt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="d7h-cg-3vU"/>
                             <constraint firstAttribute="trailing" secondItem="xjG-eG-JZt" secondAttribute="trailing" id="eF6-OO-q0c"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Öğrenciler" id="R6p-x6-d6C"/>
                     <connections>
                         <outlet property="tableView" destination="xjG-eG-JZt" id="6PH-1F-rrX"/>
+                        <segue destination="DmZ-eN-ddc" kind="show" identifier="ShowStudentDetail" id="DH1-Eb-ioe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29" y="18"/>
+            <point key="canvasLocation" x="97" y="-663"/>
+        </scene>
+        <!--Student DetailVC-->
+        <scene sceneID="Imc-al-r39">
+            <objects>
+                <viewController id="DmZ-eN-ddc" customClass="StudentDetailVC" customModule="Ders3_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KZU-a2-oYl"/>
+                        <viewControllerLayoutGuide type="bottom" id="VZv-AR-ewH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cbv-wO-ncf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7iH-og-V3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="-658"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qOf-E7-2Je">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9br-GU-Vz0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OgU-nw-HP5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="COh-HT-jHT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31S-t1-gd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-705" y="-663"/>
         </scene>
     </scenes>
     <resources>
