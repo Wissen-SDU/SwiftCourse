@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LBJ-Gc-Ju3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--TableVC-->
+        <scene sceneID="ctI-1Y-n5r">
+            <objects>
+                <tableViewController id="LBJ-Gc-Ju3" customClass="TableVC" customModule="Ders3_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hXl-e2-QOK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell_ID" rowHeight="60" id="LZb-8j-HVh" customClass="CustomCell" customModule="Ders3_2" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LZb-8j-HVh" id="tev-SB-B3G">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ6-ux-1e8">
+                                            <rect key="frame" x="531" y="14" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="switchChanged:" destination="LBJ-Gc-Ju3" eventType="valueChanged" id="nYv-Yu-J3O"/>
+                                            </connections>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwN-BL-LAM">
+                                            <rect key="frame" x="20" y="10" width="491" height="39"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="1" green="0.41826223065849744" blue="0.60195241897704843" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FC7-le-n9h">
+                                            <rect key="frame" x="0.0" y="49" width="600" height="5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="5" id="cjJ-80-8K7"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="ZJ6-ux-1e8" secondAttribute="trailing" constant="20" id="5nx-e5-hVT"/>
+                                        <constraint firstItem="FC7-le-n9h" firstAttribute="leading" secondItem="tev-SB-B3G" secondAttribute="leading" id="8ad-pO-s5O"/>
+                                        <constraint firstItem="JwN-BL-LAM" firstAttribute="top" secondItem="tev-SB-B3G" secondAttribute="top" constant="10" id="Ije-q7-7Nx"/>
+                                        <constraint firstAttribute="bottom" secondItem="FC7-le-n9h" secondAttribute="bottom" constant="5" id="Qph-ys-jdO"/>
+                                        <constraint firstItem="ZJ6-ux-1e8" firstAttribute="leading" secondItem="JwN-BL-LAM" secondAttribute="trailing" constant="20" id="fNj-oo-Ayh"/>
+                                        <constraint firstItem="JwN-BL-LAM" firstAttribute="leading" secondItem="tev-SB-B3G" secondAttribute="leading" constant="20" id="hRO-42-d0q"/>
+                                        <constraint firstAttribute="bottom" secondItem="JwN-BL-LAM" secondAttribute="bottom" constant="10" id="ll1-YY-xlW"/>
+                                        <constraint firstAttribute="trailing" secondItem="FC7-le-n9h" secondAttribute="trailing" id="sL6-2A-p9q"/>
+                                        <constraint firstAttribute="centerY" secondItem="ZJ6-ux-1e8" secondAttribute="centerY" id="zY6-rV-kSe"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.83997169843515218" green="0.99950810543908986" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="lblTitle" destination="JwN-BL-LAM" id="qvj-th-hk2"/>
+                                    <outlet property="onOffSwitch" destination="ZJ6-ux-1e8" id="JoP-nO-nNa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LBJ-Gc-Ju3" id="zLI-Sv-iIc"/>
+                            <outlet property="delegate" destination="LBJ-Gc-Ju3" id="qEs-vt-cAE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBc-xS-PuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36" y="47"/>
+        </scene>
+    </scenes>
+</document>
