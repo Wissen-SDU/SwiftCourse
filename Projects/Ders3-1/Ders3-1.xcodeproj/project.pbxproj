@@ -14,6 +14,7 @@
 		C55C3A081A25CC0700236E35 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55C3A061A25CC0700236E35 /* LaunchScreen.xib */; };
 		C55C3A141A25CC0800236E35 /* Ders3_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55C3A131A25CC0800236E35 /* Ders3_1Tests.swift */; };
 		C55C3A241A25EF0A00236E35 /* StudentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55C3A231A25EF0A00236E35 /* StudentDetailVC.swift */; };
+		C55C3A441A2604DE00236E35 /* Haneke.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C55C3A3C1A26045A00236E35 /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +25,48 @@
 			remoteGlobalIDString = C55C39F71A25CC0700236E35;
 			remoteInfo = "Ders3-1";
 		};
+		C55C3A3B1A26045A00236E35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55C3A341A26045A00236E35 /* Haneke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A095C9561980418C00CD0F4C;
+			remoteInfo = Haneke;
+		};
+		C55C3A3D1A26045A00236E35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55C3A341A26045A00236E35 /* Haneke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A095C9611980418C00CD0F4C;
+			remoteInfo = HanekeTests;
+		};
+		C55C3A3F1A26045A00236E35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55C3A341A26045A00236E35 /* Haneke.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0026E9A19C9BFBC004DE0C6;
+			remoteInfo = HanekeDemo;
+		};
+		C55C3A411A26048000236E35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55C3A341A26045A00236E35 /* Haneke.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A095C9551980418C00CD0F4C;
+			remoteInfo = Haneke;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C55C3A431A2604BD00236E35 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C55C3A441A2604DE00236E35 /* Haneke.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C55C39F81A25CC0700236E35 /* Ders3-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ders3-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +80,7 @@
 		C55C3A121A25CC0800236E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C55C3A131A25CC0800236E35 /* Ders3_1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ders3_1Tests.swift; sourceTree = "<group>"; };
 		C55C3A231A25EF0A00236E35 /* StudentDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetailVC.swift; sourceTree = "<group>"; };
+		C55C3A341A26045A00236E35 /* Haneke.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Haneke.xcodeproj; path = HanekeSwift/Haneke.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +128,7 @@
 				C55C3A011A25CC0700236E35 /* Main.storyboard */,
 				C55C3A041A25CC0700236E35 /* Images.xcassets */,
 				C55C3A061A25CC0700236E35 /* LaunchScreen.xib */,
+				C55C3A341A26045A00236E35 /* Haneke.xcodeproj */,
 				C55C39FB1A25CC0700236E35 /* Supporting Files */,
 			);
 			path = "Ders3-1";
@@ -115,6 +159,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C55C3A351A26045A00236E35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C55C3A3C1A26045A00236E35 /* Haneke.framework */,
+				C55C3A3E1A26045A00236E35 /* HanekeTests.xctest */,
+				C55C3A401A26045A00236E35 /* HanekeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,10 +179,12 @@
 				C55C39F41A25CC0700236E35 /* Sources */,
 				C55C39F51A25CC0700236E35 /* Frameworks */,
 				C55C39F61A25CC0700236E35 /* Resources */,
+				C55C3A431A2604BD00236E35 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C55C3A421A26048000236E35 /* PBXTargetDependency */,
 			);
 			name = "Ders3-1";
 			productName = "Ders3-1";
@@ -182,6 +238,12 @@
 			mainGroup = C55C39EF1A25CC0700236E35;
 			productRefGroup = C55C39F91A25CC0700236E35 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C55C3A351A26045A00236E35 /* Products */;
+					ProjectRef = C55C3A341A26045A00236E35 /* Haneke.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C55C39F71A25CC0700236E35 /* Ders3-1 */,
@@ -189,6 +251,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C55C3A3C1A26045A00236E35 /* Haneke.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Haneke.framework;
+			remoteRef = C55C3A3B1A26045A00236E35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C55C3A3E1A26045A00236E35 /* HanekeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = HanekeTests.xctest;
+			remoteRef = C55C3A3D1A26045A00236E35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C55C3A401A26045A00236E35 /* HanekeDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = HanekeDemo.app;
+			remoteRef = C55C3A3F1A26045A00236E35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C55C39F61A25CC0700236E35 /* Resources */ = {
@@ -236,6 +322,11 @@
 			isa = PBXTargetDependency;
 			target = C55C39F71A25CC0700236E35 /* Ders3-1 */;
 			targetProxy = C55C3A0E1A25CC0800236E35 /* PBXContainerItemProxy */;
+		};
+		C55C3A421A26048000236E35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Haneke;
+			targetProxy = C55C3A411A26048000236E35 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

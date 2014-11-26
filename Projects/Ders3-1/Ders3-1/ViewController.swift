@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import Haneke
 
 
  class ViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
-    struct Student {
+    class Student {
         var name:String
         var lastName:String
         var number:Int
+        var image:UIImage?
         
         private var _fullName:String?
         
-        mutating func fullName() -> String {
+        init(name:String, lastName:String, number:Int) {
+            self.name = name
+            self.lastName = lastName
+            self.number = number
+        }
+        
+        func fullName() -> String {
             if _fullName == nil {
                 _fullName = name + " " + lastName
             }
@@ -36,7 +44,7 @@ import UIKit
         
         
         for i in 0..<300 {
-            students.append(Student(name: "Ogrenci\(i)", lastName:"soyad", number: 100+i, _fullName:nil))
+            students.append(Student(name: "Ogrenci\(i)", lastName:"soyad", number: 4+i))
         }
 
         tableView.dataSource = self
@@ -67,6 +75,23 @@ import UIKit
         cell.textLabel.text = student.fullName()
         cell.detailTextLabel?.text = String(student.number)
         
+        if let image = student.image {
+            cell.imageView.image = image
+        }
+        else {
+            var tempImage = UIImage(named: "ogrenci")
+            cell.imageView.image = tempImage
+            cell.imageView.sizeToFit()
+            
+            var url = NSURL(string: "http://graph.facebook.com/\(student.number)/picture?type=square")
+            if url !=  nil {
+                cell.imageView.hnk_setImageFromURL(url!, placeholder: tempImage, format: nil, failure: nil, success: { (image) -> () in
+                    student.image = image
+                    cell.imageView.image = image
+                })
+            }
+        }
+
         return cell
     }
 
@@ -75,6 +100,8 @@ import UIKit
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         performSegueWithIdentifier(studentDetailSegue, sender:indexPath)
     }
+    
+    
     
     
     
@@ -88,13 +115,13 @@ import UIKit
             var alertController = UIAlertController(title: "Silinecek Ogrenci", message: student.fullName(), preferredStyle: UIAlertControllerStyle.Alert)
             
             // Vazgec butonunu olustur
-            var cancelAction = UIAlertAction(title: "Vazgec", style: UIAlertActionStyle.Cancel, handler: { (action) -> Void in
+            var cancelAction = UIAlertAction(title: "Vazgec", style: UIAlertActionStyle.Cancel, handler: { (action) in
                 tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
             })
             alertController.addAction(cancelAction)
             
             // Sil butonunu olustur
-            var deleteAction = UIAlertAction(title: "Sil", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
+            var deleteAction = UIAlertAction(title: "Sil", style: UIAlertActionStyle.Destructive, handler: { (action) in
                 self.students.removeAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             })
