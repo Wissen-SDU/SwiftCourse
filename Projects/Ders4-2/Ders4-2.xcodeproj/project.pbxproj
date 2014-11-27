@@ -418,6 +418,7 @@
 				C5A496C91A27226500EDCCB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5A496CA1A27226500EDCCB0 /* Build configuration list for PBXNativeTarget "Ders4-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				C5A496CC1A27226500EDCCB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

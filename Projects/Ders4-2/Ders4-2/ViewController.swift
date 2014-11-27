@@ -49,8 +49,26 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         annView.canShowCallout = true
         annView.image = UIImage(named: "logo")
+        annView.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIView
 
         return annView
+    }
+    
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        var coordinate = view.annotation.coordinate
+        
+    var url = NSURL(string: "http://maps.apple.com/maps?q=\(coordinate.latitude),\(coordinate.longitude)")
+    UIApplication.sharedApplication().openURL(url!)
+
+//        var url = NSURL(string: "sdu://?kjsfbvkjbvj")!
+//        
+//        if UIApplication.sharedApplication().canOpenURL(url) {
+//            UIApplication.sharedApplication().openURL(url)
+//        }
+//        else {
+//            
+//        }
     }
 
 }
