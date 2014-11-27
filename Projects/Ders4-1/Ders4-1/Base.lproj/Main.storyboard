@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhC-09-ISA">
-                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhC-09-ISA">
+                                <rect key="frame" x="30" y="20" width="540" height="540"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XhC-09-ISA" secondAttribute="height" multiplier="1:1" id="9Oc-xe-hi1"/>
                                 </constraints>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VWQ-Ke-ofZ">
-                                <rect key="frame" x="200" y="540" width="200" height="41"/>
+                                <rect key="frame" x="200" y="520" width="200" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="B9h-b1-a7k"/>
                                     <constraint firstAttribute="width" constant="200" id="Gf1-rO-Ezg"/>
@@ -38,18 +38,42 @@
                                     <action selector="segmentChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="ci9-vl-6bV"/>
                                 </connections>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NtO-PT-0gM">
+                                <rect key="frame" x="241" y="570" width="118" height="31"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="1BH-JC-1oz"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XhC-09-ISA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="0LM-bU-FGV"/>
                             <constraint firstAttribute="centerX" secondItem="VWQ-Ke-ofZ" secondAttribute="centerX" id="2Nj-f4-7qd"/>
-                            <constraint firstAttribute="trailing" secondItem="XhC-09-ISA" secondAttribute="trailing" constant="20" id="D0F-jy-iad"/>
+                            <constraint firstItem="NtO-PT-0gM" firstAttribute="top" secondItem="VWQ-Ke-ofZ" secondAttribute="bottom" constant="40" id="8FT-og-zpO"/>
+                            <constraint firstAttribute="trailing" secondItem="XhC-09-ISA" secondAttribute="trailing" constant="30" id="D0F-jy-iad"/>
                             <constraint firstItem="VWQ-Ke-ofZ" firstAttribute="top" secondItem="XhC-09-ISA" secondAttribute="bottom" constant="-40" id="JXK-M4-O4e"/>
-                            <constraint firstItem="XhC-09-ISA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="i0o-2U-YuG"/>
+                            <constraint firstAttribute="trailing" secondItem="NtO-PT-0gM" secondAttribute="trailing" constant="10" id="ORT-HE-90Z"/>
+                            <constraint firstItem="NtO-PT-0gM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="Z5z-cU-PPc"/>
+                            <constraint firstItem="XhC-09-ISA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="i0o-2U-YuG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8FT-og-zpO"/>
+                                <exclude reference="ORT-HE-90Z"/>
+                                <exclude reference="Z5z-cU-PPc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="8FT-og-zpO"/>
+                                <include reference="ORT-HE-90Z"/>
+                                <include reference="Z5z-cU-PPc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="XhC-09-ISA" id="ONv-dj-kUx"/>
+                        <outlet property="slider" destination="NtO-PT-0gM" id="Epa-9M-sq4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

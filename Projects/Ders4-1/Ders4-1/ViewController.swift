@@ -12,15 +12,27 @@ import MapKit
 class ViewController: UIViewController , CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    
+    @IBOutlet weak var slider: UISlider!
     var locationManager = CLLocationManager()
+    var distance = 1000.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
         mapView.delegate = self
+        slider.enabled = false
+        slider.minimumValue = 100
+        slider.maximumValue = 10000
+        slider.value = slider.maximumValue - Float(distance)
+    }
+    
+    
+    // MARK: Utility Methods
 
+    func updateMap(animated:Bool) {
+        var region = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, distance, distance)
+        mapView.setRegion(region, animated: animated)
     }
     
     
@@ -29,14 +41,15 @@ class ViewController: UIViewController , CLLocationManagerDelegate, MKMapViewDel
     func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
         
         if let location:CLLocation = userLocation.location {
-            
-            var region = MKCoordinateRegionMakeWithDistance(location.coordinate, 1000, 1000)
-            mapView.setRegion(region, animated: true)
-            
+            slider.enabled = true
+            updateMap(true)
+        }
+        else {
+            slider.enabled = false
         }
         
     }
-
+    
     
     // MARK: - LocationManager Methods
     
@@ -63,6 +76,13 @@ class ViewController: UIViewController , CLLocationManagerDelegate, MKMapViewDel
         
     }
     
+    @IBAction func sliderChanged(sender: UISlider) {
+        
+        var zoomValue = slider.maximumValue - slider.value
+        println(zoomValue)
+        distance = Double(zoomValue)
+        updateMap(false)
+    }
 
 }
 
