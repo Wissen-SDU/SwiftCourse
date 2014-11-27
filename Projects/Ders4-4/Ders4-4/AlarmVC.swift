@@ -39,15 +39,21 @@ class AlarmVC: UIViewController {
             if let currentalarm = alarm {
                 
                 if txtAlarm.text == currentalarm.title && datePicker.date == currentalarm.date {
-                    // hic bir degisiklik yapmamis
                 }
                 else {
                     // degisiklik yapmis
+                    currentalarm.title = txtAlarm.text
+                    currentalarm.date = datePicker.date
                 }
             }
             else {
+                
                 // yeni bir alarm ekliyor
+                var newAlarm = Alarm(title: txtAlarm.text, date: datePicker.date)
+                alarms.append(newAlarm)
             }
+            
+            self.navigationController?.popViewControllerAnimated(true)
         }
         
     }

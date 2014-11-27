@@ -11,8 +11,14 @@ import Foundation
 
 class Alarm {
     
-    var title:String!
-    var date:NSDate!
+    var title:String
+    var date:NSDate
+    
+    init(title:String, date:NSDate) {
+        self.title = title
+        self.date = date
+    }
+    
 }
 
 
