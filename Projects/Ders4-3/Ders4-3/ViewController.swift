@@ -15,6 +15,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        println("Viewcontroller viewDidLoad")
 
         loadUI()
     }
