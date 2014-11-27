@@ -54,6 +54,15 @@ class ViewController: UIViewController , CLLocationManagerDelegate, MKMapViewDel
         }
     }
 
+    
+    // MARK: - Action Methods
+    
+    @IBAction func segmentChanged(sender: UISegmentedControl) {
+        
+        mapView.mapType = MKMapType(rawValue: UInt(sender.selectedSegmentIndex))!
+        
+    }
+    
 
 }
 

@@ -23,11 +23,28 @@
                                     <constraint firstAttribute="width" secondItem="XhC-09-ISA" secondAttribute="height" multiplier="1:1" id="9Oc-xe-hi1"/>
                                 </constraints>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VWQ-Ke-ofZ">
+                                <rect key="frame" x="200" y="540" width="200" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="B9h-b1-a7k"/>
+                                    <constraint firstAttribute="width" constant="200" id="Gf1-rO-Ezg"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standart"/>
+                                    <segment title="Uydu"/>
+                                    <segment title="Hibrit"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="ci9-vl-6bV"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XhC-09-ISA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="0LM-bU-FGV"/>
+                            <constraint firstAttribute="centerX" secondItem="VWQ-Ke-ofZ" secondAttribute="centerX" id="2Nj-f4-7qd"/>
                             <constraint firstAttribute="trailing" secondItem="XhC-09-ISA" secondAttribute="trailing" constant="20" id="D0F-jy-iad"/>
+                            <constraint firstItem="VWQ-Ke-ofZ" firstAttribute="top" secondItem="XhC-09-ISA" secondAttribute="bottom" constant="-40" id="JXK-M4-O4e"/>
                             <constraint firstItem="XhC-09-ISA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="i0o-2U-YuG"/>
                         </constraints>
                     </view>
