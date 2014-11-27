@@ -15,6 +15,8 @@
 		C5DF054D1A275E9C00934500 /* Ders4_4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF054C1A275E9C00934500 /* Ders4_4Tests.swift */; };
 		C5DF05571A27609500934500 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF05561A27609500934500 /* Alarm.swift */; };
 		C5DF05591A2760F300934500 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF05581A2760F300934500 /* AlarmVC.swift */; };
+		C5DF055F1A276DA800934500 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C5DF055C1A276DA800934500 /* SVProgressHUD.bundle */; };
+		C5DF05601A276DA800934500 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DF055E1A276DA800934500 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,11 @@
 		C5DF054C1A275E9C00934500 /* Ders4_4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ders4_4Tests.swift; sourceTree = "<group>"; };
 		C5DF05561A27609500934500 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		C5DF05581A2760F300934500 /* AlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
+		C5DF055B1A276DA800934500 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		C5DF055C1A276DA800934500 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		C5DF055D1A276DA800934500 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		C5DF055E1A276DA800934500 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		C5DF05691A276E9C00934500 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +88,12 @@
 		C5DF05331A275E9C00934500 /* Ders4-4 */ = {
 			isa = PBXGroup;
 			children = (
+				C5DF055A1A276DA800934500 /* SVProgressHUD */,
 				C5DF05361A275E9C00934500 /* AppDelegate.swift */,
 				C5DF05381A275E9C00934500 /* ViewController.swift */,
 				C5DF05581A2760F300934500 /* AlarmVC.swift */,
 				C5DF05561A27609500934500 /* Alarm.swift */,
+				C5DF05691A276E9C00934500 /* Bridge.h */,
 				C5DF053A1A275E9C00934500 /* Main.storyboard */,
 				C5DF053D1A275E9C00934500 /* Images.xcassets */,
 				C5DF053F1A275E9C00934500 /* LaunchScreen.xib */,
@@ -116,6 +125,17 @@
 				C5DF054B1A275E9C00934500 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5DF055A1A276DA800934500 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C5DF055B1A276DA800934500 /* SVProgressHUD-Prefix.pch */,
+				C5DF055C1A276DA800934500 /* SVProgressHUD.bundle */,
+				C5DF055D1A276DA800934500 /* SVProgressHUD.h */,
+				C5DF055E1A276DA800934500 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +221,7 @@
 				C5DF053C1A275E9C00934500 /* Main.storyboard in Resources */,
 				C5DF05411A275E9C00934500 /* LaunchScreen.xib in Resources */,
 				C5DF053E1A275E9C00934500 /* Images.xcassets in Resources */,
+				C5DF055F1A276DA800934500 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +241,7 @@
 			files = (
 				C5DF05391A275E9C00934500 /* ViewController.swift in Sources */,
 				C5DF05371A275E9C00934500 /* AppDelegate.swift in Sources */,
+				C5DF05601A276DA800934500 /* SVProgressHUD.m in Sources */,
 				C5DF05591A2760F300934500 /* AlarmVC.swift in Sources */,
 				C5DF05571A27609500934500 /* Alarm.swift in Sources */,
 			);
@@ -347,6 +369,7 @@
 				INFOPLIST_FILE = "Ders4-4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ders4-4/Bridge.h";
 			};
 			name = Debug;
 		};
@@ -357,6 +380,7 @@
 				INFOPLIST_FILE = "Ders4-4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ders4-4/Bridge.h";
 			};
 			name = Release;
 		};

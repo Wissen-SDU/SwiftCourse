@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mFH-cE-25w">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Alarmlar-->
@@ -13,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Jy-Rs-yOP">
@@ -69,20 +70,48 @@
                         <viewControllerLayoutGuide type="bottom" id="vb7-8g-IKa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ECA-vI-Fzb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7A4-5q-1k3">
+                                <rect key="frame" x="0.0" y="134" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="438789845.75283098">
+                                    <!--2014-11-27 14:04:05 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="tr_TR"/>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gmp-xa-y0Z">
+                                <rect key="frame" x="16" y="84" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gmp-xa-y0Z" firstAttribute="leading" secondItem="ECA-vI-Fzb" secondAttribute="leadingMargin" id="38S-GR-ZRJ"/>
+                            <constraint firstItem="7A4-5q-1k3" firstAttribute="top" secondItem="gmp-xa-y0Z" secondAttribute="bottom" constant="20" id="9U9-Bp-xhZ"/>
+                            <constraint firstItem="7A4-5q-1k3" firstAttribute="leading" secondItem="ECA-vI-Fzb" secondAttribute="leading" id="NqX-mk-bah"/>
+                            <constraint firstAttribute="trailing" secondItem="7A4-5q-1k3" secondAttribute="trailing" id="RIY-gB-f7Q"/>
+                            <constraint firstItem="gmp-xa-y0Z" firstAttribute="trailing" secondItem="ECA-vI-Fzb" secondAttribute="trailingMargin" id="Ykd-Dj-SN7"/>
+                            <constraint firstItem="gmp-xa-y0Z" firstAttribute="top" secondItem="o50-2r-iN3" secondAttribute="bottom" constant="20" id="msp-td-Vcf"/>
+                        </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="datePicker" destination="7A4-5q-1k3" id="rdj-up-bNC"/>
+                        <outlet property="txtAlarm" destination="gmp-xa-y0Z" id="pGh-Rk-2Nu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axI-fI-iZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1818" y="340"/>
+            <point key="canvasLocation" x="1809" y="174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b3m-Ox-2tt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mFH-cE-25w" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3qA-fK-8Pn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

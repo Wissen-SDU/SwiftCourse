@@ -9,16 +9,47 @@
 import UIKit
 
 class AlarmVC: UIViewController {
+    
+    var alarm:Alarm?
 
+    @IBOutlet weak var txtAlarm: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        if let currentalarm = alarm {
+            txtAlarm.text = currentalarm.title
+            datePicker.date = currentalarm.date
+        }
+        
+        txtAlarm.becomeFirstResponder()
+        datePicker.minimumDate = NSDate()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Kaydet", style: UIBarButtonItemStyle.Done, target: self, action: "saveTapped")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func saveTapped() {
+        
+        if txtAlarm.text.isEmpty {
+            SVProgressHUD.showErrorWithStatus("Alarm Basligi Girin!")
+        }
+        else {
+            if let currentalarm = alarm {
+                
+                if txtAlarm.text == currentalarm.title && datePicker.date == currentalarm.date {
+                    // hic bir degisiklik yapmamis
+                }
+                else {
+                    // degisiklik yapmis
+                }
+            }
+            else {
+                // yeni bir alarm ekliyor
+            }
+        }
+        
     }
     
 
