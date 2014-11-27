@@ -26,6 +26,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         var image = UIImage(named: "manzara")
         var imageView = UIImageView(image: image)
+        
+        var doubleTap = UITapGestureRecognizer(target: self, action: "doubleTapped:")
+        doubleTap.numberOfTapsRequired = 2
+        imageView.userInteractionEnabled = true
+        imageView.addGestureRecognizer(doubleTap)
+        
         manzaraImage = imageView
         manzaraScroll.addSubview(imageView)
         
@@ -56,6 +62,27 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         else {
             manzaraScroll.zoomScale = heightRatio
+        }
+    }
+    
+    
+    func doubleTapped(doubleTap:UITapGestureRecognizer) {
+        
+        if manzaraScroll.zoomScale == manzaraScroll.maximumZoomScale {
+            manzaraScroll.setZoomScale(manzaraScroll.minimumZoomScale, animated: true)
+        }
+        else {
+            var tapPoint = doubleTap.locationInView(manzaraImage)
+
+            let scrollViewSize = manzaraScroll.bounds.size
+            let w = scrollViewSize.width / manzaraScroll.maximumZoomScale
+            let h = scrollViewSize.height / manzaraScroll.maximumZoomScale
+            let x = tapPoint.x - (w / 2.0)
+            let y = tapPoint.y - (h / 2.0)
+            
+            let rectToZoomTo = CGRectMake(x, y, w, h);
+            
+            manzaraScroll.zoomToRect(rectToZoomTo, animated: true)
         }
     }
     
