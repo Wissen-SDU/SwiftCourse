@@ -48,7 +48,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        var cell = collection.dequeueReusableCellWithReuseIdentifier("AlarmCell", forIndexPath: indexPath) as UICollectionViewCell
+        var cell = collection.dequeueReusableCellWithReuseIdentifier("AlarmCell", forIndexPath: indexPath) as AlarmCell
+        
+        var notification = alarms[indexPath.item]
+        
+        cell.lblTitle.text = notification.alertBody
+        cell.lblDate.text = notification.fireDate?.description
         
         return cell
     }
