@@ -10,7 +10,7 @@ import UIKit
 
 class AlarmVC: UIViewController {
     
-    var alarm:Alarm?
+    var alarm:UILocalNotification?
 
     @IBOutlet weak var txtAlarm: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -20,8 +20,8 @@ class AlarmVC: UIViewController {
         
         
         if let currentalarm = alarm {
-            txtAlarm.text = currentalarm.title
-            datePicker.date = currentalarm.date
+            txtAlarm.text = currentalarm.alertBody
+            datePicker.date = currentalarm.fireDate!
         }
         
         txtAlarm.becomeFirstResponder()
@@ -38,13 +38,18 @@ class AlarmVC: UIViewController {
         else {
             if let currentalarm = alarm {
                 
-                if txtAlarm.text == currentalarm.title && datePicker.date == currentalarm.date {
+                if txtAlarm.text == currentalarm.alertBody && datePicker.date == currentalarm.fireDate! {
                     // hicbir degisiklik yapmamis
                 }
                 else {
                     // degisiklik yapmis
-                    currentalarm.title = txtAlarm.text
-                    currentalarm.date = datePicker.date
+                    
+                    UIApplication.sharedApplication().cancelLocalNotification(currentalarm)
+                    
+                    currentalarm.alertBody = txtAlarm.text
+                    currentalarm.fireDate = datePicker.date
+                    
+                    UIApplication.sharedApplication().scheduleLocalNotification(currentalarm)
                 }
             }
             else {
@@ -54,8 +59,8 @@ class AlarmVC: UIViewController {
 //                alarms.append(newAlarm)
                 
                 
-                println("now: \(NSDate())")
-                println("noti date: \(datePicker.date)")
+//                println("now: \(NSDate())")
+//                println("noti date: \(datePicker.date)")
                 
                 fireLocalNotification(txtAlarm.text, date: datePicker.date)
             }
@@ -68,14 +73,13 @@ class AlarmVC: UIViewController {
     
     func fireLocalNotification(title:String, date:NSDate) {
         
-        var settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, categories:nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-
         var notification = UILocalNotification()
         notification.alertBody = title
         
         notification.fireDate = date
         notification.applicationIconBadgeNumber++
+        notification.soundName = UILocalNotificationDefaultSoundName
+        
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     

@@ -58,6 +58,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        var notification = alarms[indexPath.item]
+        
+        var alarmVC = self.storyboard!.instantiateViewControllerWithIdentifier("AlarmVC") as AlarmVC
+        
+        alarmVC.alarm = notification
+        
+        self.navigationController?.pushViewController(alarmVC, animated: true)
+
+    }
 
 }
 
