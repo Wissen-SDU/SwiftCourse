@@ -96,19 +96,11 @@
 		C57F816B1A2870B70092BC4B /* Ders5-1 */ = {
 			isa = PBXGroup;
 			children = (
-				C57F819A1A289E7E0092BC4B /* SVProgressHUD */,
-				C57F81921A28970D0092BC4B /* Realm.framework */,
-				C57F81941A2897500092BC4B /* libc++.dylib */,
-				C57F81961A2897BB0092BC4B /* RLMSupport.swift */,
-				C57F816E1A2870B70092BC4B /* AppDelegate.swift */,
-				C57F81701A2870B70092BC4B /* FirstViewController.swift */,
-				C57F81721A2870B70092BC4B /* SecondViewController.swift */,
-				C57F81981A28981C0092BC4B /* User.swift */,
-				C57F81741A2870B70092BC4B /* Main.storyboard */,
-				C57F81771A2870B70092BC4B /* Images.xcassets */,
-				C57F81791A2870B70092BC4B /* LaunchScreen.xib */,
+				C57F81A81A28A1750092BC4B /* UI */,
+				C57F81A51A28A13F0092BC4B /* Frameworks */,
+				C57F81A61A28A1500092BC4B /* Controllers */,
+				C57F81A71A28A1670092BC4B /* Models */,
 				C57F816C1A2870B70092BC4B /* Supporting Files */,
-				C57F81A41A289EB50092BC4B /* Bridge.h */,
 			);
 			path = "Ders5-1";
 			sourceTree = "<group>";
@@ -147,6 +139,46 @@
 				C57F819E1A289E7E0092BC4B /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		C57F81A51A28A13F0092BC4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C57F81961A2897BB0092BC4B /* RLMSupport.swift */,
+				C57F819A1A289E7E0092BC4B /* SVProgressHUD */,
+				C57F81921A28970D0092BC4B /* Realm.framework */,
+				C57F81941A2897500092BC4B /* libc++.dylib */,
+				C57F81A41A289EB50092BC4B /* Bridge.h */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C57F81A61A28A1500092BC4B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C57F81701A2870B70092BC4B /* FirstViewController.swift */,
+				C57F81721A2870B70092BC4B /* SecondViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C57F81A71A28A1670092BC4B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C57F816E1A2870B70092BC4B /* AppDelegate.swift */,
+				C57F81981A28981C0092BC4B /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C57F81A81A28A1750092BC4B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C57F81741A2870B70092BC4B /* Main.storyboard */,
+				C57F81771A2870B70092BC4B /* Images.xcassets */,
+				C57F81791A2870B70092BC4B /* LaunchScreen.xib */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
