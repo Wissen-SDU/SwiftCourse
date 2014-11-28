@@ -68,7 +68,7 @@ class AlarmVC: UIViewController {
     
     func fireLocalNotification(title:String, date:NSDate) {
         
-        var settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories:nil)
+        var settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, categories:nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
 
         var notification = UILocalNotification()

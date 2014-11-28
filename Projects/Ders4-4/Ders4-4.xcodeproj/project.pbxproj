@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C57F815F1A285B8B0092BC4B /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F815E1A285B8B0092BC4B /* AlarmCell.swift */; };
 		C5DF05371A275E9C00934500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF05361A275E9C00934500 /* AppDelegate.swift */; };
 		C5DF05391A275E9C00934500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF05381A275E9C00934500 /* ViewController.swift */; };
 		C5DF053C1A275E9C00934500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DF053A1A275E9C00934500 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C57F815E1A285B8B0092BC4B /* AlarmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
 		C5DF05311A275E9C00934500 /* Ders4-4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ders4-4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DF05351A275E9C00934500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5DF05361A275E9C00934500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				C5DF05381A275E9C00934500 /* ViewController.swift */,
 				C5DF05581A2760F300934500 /* AlarmVC.swift */,
 				C5DF05561A27609500934500 /* Alarm.swift */,
+				C57F815E1A285B8B0092BC4B /* AlarmCell.swift */,
 				C5DF05691A276E9C00934500 /* Bridge.h */,
 				C5DF053A1A275E9C00934500 /* Main.storyboard */,
 				C5DF053D1A275E9C00934500 /* Images.xcassets */,
@@ -244,6 +247,7 @@
 				C5DF05601A276DA800934500 /* SVProgressHUD.m in Sources */,
 				C5DF05591A2760F300934500 /* AlarmVC.swift in Sources */,
 				C5DF05571A27609500934500 /* Alarm.swift in Sources */,
+				C57F815F1A285B8B0092BC4B /* AlarmCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +441,7 @@
 				C5DF05521A275E9C00934500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5DF05531A275E9C00934500 /* Build configuration list for PBXNativeTarget "Ders4-4Tests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +450,7 @@
 				C5DF05551A275E9C00934500 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
