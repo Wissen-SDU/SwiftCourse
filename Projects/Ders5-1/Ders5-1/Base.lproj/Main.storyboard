@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Kişiler" id="ijO-3s-KqA"/>
+                    <tabBarItem key="tabBarItem" title="Kişiler" image="kisiler" id="ijO-3s-KqA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsf-8c-fME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="990" y="656"/>
         </scene>
-        <!--Kişi-->
+        <!--Kişi Ekle-->
         <scene sceneID="uC8-eF-GzV">
             <objects>
                 <viewController id="voE-kP-aeR" customClass="FirstViewController" customModule="Ders5_1" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                         <viewControllerLayoutGuide type="top" id="URf-xM-8mX"/>
                         <viewControllerLayoutGuide type="bottom" id="oqy-xB-dHl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="M1T-wK-ZSq">
+                    <view key="view" contentMode="scaleToFill" id="M1T-wK-ZSq" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -75,8 +75,11 @@
                             <constraint firstItem="V4D-je-lME" firstAttribute="top" secondItem="URf-xM-8mX" secondAttribute="bottom" constant="8" id="lc5-Lv-u2P"/>
                             <constraint firstItem="aIB-De-WU6" firstAttribute="top" secondItem="URf-xM-8mX" secondAttribute="bottom" constant="8" id="tPT-E9-L6z"/>
                         </constraints>
+                        <connections>
+                            <action selector="backgroundTapped:" destination="voE-kP-aeR" eventType="touchUpInside" id="tkr-IT-xPH"/>
+                        </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Kişi" id="CCr-BG-j8x"/>
+                    <tabBarItem key="tabBarItem" title="Kişi Ekle" image="ekle" id="CCr-BG-j8x"/>
                     <connections>
                         <outlet property="lblMessage" destination="IUg-7w-sBR" id="Gv1-F1-Jcn"/>
                         <outlet property="txtUsername" destination="V4D-je-lME" id="3dO-MH-f02"/>
@@ -106,4 +109,8 @@
             <point key="canvasLocation" x="170" y="324"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ekle" width="24" height="24"/>
+        <image name="kisiler" width="24" height="24"/>
+    </resources>
 </document>
