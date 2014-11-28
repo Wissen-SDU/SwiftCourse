@@ -53,7 +53,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         var notification = alarms[indexPath.item]
         
         cell.lblTitle.text = notification.alertBody
-        cell.lblDate.text = notification.fireDate?.description
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd.MM.YYYY HH:mm"
+        var dateStr = dateFormatter.stringFromDate(notification.fireDate!)
+
+        var dateStr2 = NSDateFormatter.localizedStringFromDate(notification.fireDate!, dateStyle: NSDateFormatterStyle.MediumStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        
+        cell.lblDate.text = dateStr2
         
         return cell
     }
