@@ -9,7 +9,7 @@
 import UIKit
 
 
-var alarms = Array<Alarm>()
+var alarms = Array<UILocalNotification>()
 
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -27,6 +27,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        alarms = UIApplication.sharedApplication().scheduledLocalNotifications as [UILocalNotification]
         collection.reloadData()
     }
 

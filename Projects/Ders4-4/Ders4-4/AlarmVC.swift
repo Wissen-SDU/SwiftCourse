@@ -39,6 +39,7 @@ class AlarmVC: UIViewController {
             if let currentalarm = alarm {
                 
                 if txtAlarm.text == currentalarm.title && datePicker.date == currentalarm.date {
+                    // hicbir degisiklik yapmamis
                 }
                 else {
                     // degisiklik yapmis
@@ -49,13 +50,33 @@ class AlarmVC: UIViewController {
             else {
                 
                 // yeni bir alarm ekliyor
-                var newAlarm = Alarm(title: txtAlarm.text, date: datePicker.date)
-                alarms.append(newAlarm)
+//                var newAlarm = Alarm(title: txtAlarm.text, date: datePicker.date)
+//                alarms.append(newAlarm)
+                
+                
+                println("now: \(NSDate())")
+                println("noti date: \(datePicker.date)")
+                
+                fireLocalNotification(txtAlarm.text, date: datePicker.date)
             }
             
             self.navigationController?.popViewControllerAnimated(true)
         }
         
+    }
+    
+    
+    func fireLocalNotification(title:String, date:NSDate) {
+        
+        var settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories:nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+
+        var notification = UILocalNotification()
+        notification.alertBody = title
+        
+        notification.fireDate = date
+        notification.applicationIconBadgeNumber++
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
 
