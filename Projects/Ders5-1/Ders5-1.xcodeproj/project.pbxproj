@@ -14,6 +14,12 @@
 		C57F81781A2870B70092BC4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57F81771A2870B70092BC4B /* Images.xcassets */; };
 		C57F817B1A2870B70092BC4B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57F81791A2870B70092BC4B /* LaunchScreen.xib */; };
 		C57F81871A2870B70092BC4B /* Ders5_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F81861A2870B70092BC4B /* Ders5_1Tests.swift */; };
+		C57F81931A28970D0092BC4B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57F81921A28970D0092BC4B /* Realm.framework */; };
+		C57F81951A2897500092BC4B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C57F81941A2897500092BC4B /* libc++.dylib */; };
+		C57F81971A2897BB0092BC4B /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F81961A2897BB0092BC4B /* RLMSupport.swift */; };
+		C57F81991A28981C0092BC4B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57F81981A28981C0092BC4B /* User.swift */; };
+		C57F819F1A289E7E0092BC4B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C57F819C1A289E7E0092BC4B /* SVProgressHUD.bundle */; };
+		C57F81A01A289E7E0092BC4B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C57F819E1A289E7E0092BC4B /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,15 @@
 		C57F81801A2870B70092BC4B /* Ders5-1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ders5-1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57F81851A2870B70092BC4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C57F81861A2870B70092BC4B /* Ders5_1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ders5_1Tests.swift; sourceTree = "<group>"; };
+		C57F81921A28970D0092BC4B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		C57F81941A2897500092BC4B /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		C57F81961A2897BB0092BC4B /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		C57F81981A28981C0092BC4B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C57F819B1A289E7E0092BC4B /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		C57F819C1A289E7E0092BC4B /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		C57F819D1A289E7E0092BC4B /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		C57F819E1A289E7E0092BC4B /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		C57F81A41A289EB50092BC4B /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C57F81951A2897500092BC4B /* libc++.dylib in Frameworks */,
+				C57F81931A28970D0092BC4B /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,13 +96,19 @@
 		C57F816B1A2870B70092BC4B /* Ders5-1 */ = {
 			isa = PBXGroup;
 			children = (
+				C57F819A1A289E7E0092BC4B /* SVProgressHUD */,
+				C57F81921A28970D0092BC4B /* Realm.framework */,
+				C57F81941A2897500092BC4B /* libc++.dylib */,
+				C57F81961A2897BB0092BC4B /* RLMSupport.swift */,
 				C57F816E1A2870B70092BC4B /* AppDelegate.swift */,
 				C57F81701A2870B70092BC4B /* FirstViewController.swift */,
 				C57F81721A2870B70092BC4B /* SecondViewController.swift */,
+				C57F81981A28981C0092BC4B /* User.swift */,
 				C57F81741A2870B70092BC4B /* Main.storyboard */,
 				C57F81771A2870B70092BC4B /* Images.xcassets */,
 				C57F81791A2870B70092BC4B /* LaunchScreen.xib */,
 				C57F816C1A2870B70092BC4B /* Supporting Files */,
+				C57F81A41A289EB50092BC4B /* Bridge.h */,
 			);
 			path = "Ders5-1";
 			sourceTree = "<group>";
@@ -113,6 +136,17 @@
 				C57F81851A2870B70092BC4B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C57F819A1A289E7E0092BC4B /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C57F819B1A289E7E0092BC4B /* SVProgressHUD-Prefix.pch */,
+				C57F819C1A289E7E0092BC4B /* SVProgressHUD.bundle */,
+				C57F819D1A289E7E0092BC4B /* SVProgressHUD.h */,
+				C57F819E1A289E7E0092BC4B /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +232,7 @@
 				C57F81761A2870B70092BC4B /* Main.storyboard in Resources */,
 				C57F817B1A2870B70092BC4B /* LaunchScreen.xib in Resources */,
 				C57F81781A2870B70092BC4B /* Images.xcassets in Resources */,
+				C57F819F1A289E7E0092BC4B /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +253,9 @@
 				C57F81731A2870B70092BC4B /* SecondViewController.swift in Sources */,
 				C57F816F1A2870B70092BC4B /* AppDelegate.swift in Sources */,
 				C57F81711A2870B70092BC4B /* FirstViewController.swift in Sources */,
+				C57F81991A28981C0092BC4B /* User.swift in Sources */,
+				C57F81971A2897BB0092BC4B /* RLMSupport.swift in Sources */,
+				C57F81A01A289E7E0092BC4B /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,9 +378,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ders5-1",
+				);
 				INFOPLIST_FILE = "Ders5-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ders5-1/Bridge.h";
 			};
 			name = Debug;
 		};
@@ -350,9 +393,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ders5-1",
+				);
 				INFOPLIST_FILE = "Ders5-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ders5-1/Bridge.h";
 			};
 			name = Release;
 		};

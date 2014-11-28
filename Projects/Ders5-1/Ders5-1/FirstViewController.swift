@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 class FirstViewController: UIViewController {
 
@@ -26,15 +27,40 @@ class FirstViewController: UIViewController {
     @IBAction func getirTapped(sender: UIButton) {
         
         if !txtUsername.text.isEmpty {
-            var url = NSURL(string: "http://graph.facebook.com/\(txtUsername.text)")
+            var url = NSURL(string: "https://graph.facebook.com/\(txtUsername.text)")
             var request = NSURLRequest(URL: url!)
             
-            
+            SVProgressHUD.show()
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response:NSURLResponse!, data:NSData!, error:NSError!) -> Void in
 
+                SVProgressHUD.dismiss()
+                
+                
                 if let userData = data {
-                    var dataText:NSString = NSString(data:userData, encoding: NSUTF8StringEncoding)!
-                    println(dataText)
+                    
+                    let jsonObject:AnyObject! = NSJSONSerialization.JSONObjectWithData(userData, options: NSJSONReadingOptions(0), error: nil)
+                    
+                    if let userId:AnyObject = jsonObject.objectForKey("id") {
+                        let realm = RLMRealm.defaultRealm()
+                        realm.beginWriteTransaction()
+                        var newUser = User.createOrUpdateInDefaultRealmWithObject(jsonObject)
+                        realm.commitWriteTransaction()
+                        
+                        
+                        if newUser != nil {
+                            self.lblMessage.text = "Kullanici basariyla kaydedildi: \(newUser.name)"
+                            self.lblMessage.textColor = UIColor.greenColor()
+                        }
+                        else {
+                            self.lblMessage.text = "Kullanici bulunamadi! : \(self.txtUsername.text)"
+                            self.lblMessage.textColor = UIColor.redColor()
+                        }
+                    }
+                    else {
+                        self.lblMessage.text = "Kullanici bulunamadi! : \(self.txtUsername.text)"
+                        self.lblMessage.textColor = UIColor.redColor()
+                    }
+
                 }
                 else {
                     println(error)
