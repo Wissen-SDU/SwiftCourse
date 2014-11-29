@@ -41,8 +41,8 @@
 		C5FAE0F81A29B07300D2E145 /* Ders6-1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ders6-1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FAE0FD1A29B07300D2E145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5FAE0FE1A29B07300D2E145 /* Ders6_1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ders6_1Tests.swift; sourceTree = "<group>"; };
-		C5FAE10B1A29C1D500D2E145 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		C5FAE10C1A29C1D500D2E145 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		C5FAE10B1A29C1D500D2E145 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Ders6-1/Bolts.framework"; sourceTree = "<group>"; };
+		C5FAE10C1A29C1D500D2E145 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Ders6-1/Parse.framework"; sourceTree = "<group>"; };
 		C5FAE10F1A29C2A000D2E145 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C5FAE1111A29C2AF00D2E145 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C5FAE1131A29C2BC00D2E145 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -76,11 +76,7 @@
 		C5FAE0DA1A29B07300D2E145 = {
 			isa = PBXGroup;
 			children = (
-				C5FAE1171A29C2E000D2E145 /* SystemConfiguration.framework */,
-				C5FAE1151A29C2C800D2E145 /* CFNetwork.framework */,
-				C5FAE1131A29C2BC00D2E145 /* Security.framework */,
-				C5FAE1111A29C2AF00D2E145 /* AudioToolbox.framework */,
-				C5FAE10F1A29C2A000D2E145 /* MobileCoreServices.framework */,
+				C5FAE1191A29C43A00D2E145 /* Frameworks */,
 				C5FAE0E51A29B07300D2E145 /* Ders6-1 */,
 				C5FAE0FB1A29B07300D2E145 /* Ders6-1Tests */,
 				C5FAE0E41A29B07300D2E145 /* Products */,
@@ -99,8 +95,6 @@
 		C5FAE0E51A29B07300D2E145 /* Ders6-1 */ = {
 			isa = PBXGroup;
 			children = (
-				C5FAE10B1A29C1D500D2E145 /* Bolts.framework */,
-				C5FAE10C1A29C1D500D2E145 /* Parse.framework */,
 				C5FAE0E81A29B07300D2E145 /* AppDelegate.swift */,
 				C5FAE0EA1A29B07300D2E145 /* ViewController.swift */,
 				C5FAE0EC1A29B07300D2E145 /* Main.storyboard */,
@@ -134,6 +128,20 @@
 				C5FAE0FD1A29B07300D2E145 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5FAE1191A29C43A00D2E145 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5FAE10B1A29C1D500D2E145 /* Bolts.framework */,
+				C5FAE10C1A29C1D500D2E145 /* Parse.framework */,
+				C5FAE1171A29C2E000D2E145 /* SystemConfiguration.framework */,
+				C5FAE1151A29C2C800D2E145 /* CFNetwork.framework */,
+				C5FAE1131A29C2BC00D2E145 /* Security.framework */,
+				C5FAE1111A29C2AF00D2E145 /* AudioToolbox.framework */,
+				C5FAE10F1A29C2A000D2E145 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

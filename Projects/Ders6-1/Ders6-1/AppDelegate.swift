@@ -19,9 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.setApplicationId("FjfpSKoGBmZrCLCGZvAx6L9Q8EFPKljai6WbRZVa", clientKey: "BVm9lOAAS6q3v3p0h8RnX7zfYmi7u0bvjmjrdZqS")
         
+        
+        if !application.isRegisteredForRemoteNotifications() {
+            
+            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, categories: nil))
+            application.registerForRemoteNotifications()
+        }
+        
 
         return true
     }
+    
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
