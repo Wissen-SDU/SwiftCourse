@@ -12,7 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        var textView = UITextView(frame:view.bounds)
+        var appDel = UIApplication.sharedApplication().delegate as AppDelegate
+        textView.text = appDel.pushNotification?.description
+        view.addSubview(textView)
     }
 
     override func didReceiveMemoryWarning() {

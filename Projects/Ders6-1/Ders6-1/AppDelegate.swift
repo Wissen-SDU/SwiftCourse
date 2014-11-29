@@ -13,7 +13,7 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var pushNotification:AnyObject?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -25,12 +25,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, categories: nil))
             application.registerForRemoteNotifications()
         }
-        
+        else {
+            if launchOptions != nil {
+                var noti: AnyObject? = launchOptions![UIApplicationLaunchOptionsRemoteNotificationKey]
+                if let pushNoti:AnyObject = noti {
+                    pushNotification = pushNoti
+                }
+            }
+        }
+
 
         return true
     }
     
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        println(userInfo)
+    }
+    
+    
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+        PFInstallation.currentInstallation().setDeviceTokenFromData(deviceToken)
+        PFInstallation.currentInstallation().saveInBackgroundWithBlock { (completed, error) -> Void in
+            if completed {
+                println("TOKEN gonderildi")
+            }
+            else {
+                println("TOKEN gonderilemedi! :\(error)")
+            }
+        }
+        
+//        println(NSString(data: deviceToken, encoding: NSUTF8StringEncoding))
+    }
+    
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        println(notificationSettings)
+    }
+    
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println("FAILED: \(error)")
+    }
     
 
     func applicationWillResignActive(application: UIApplication) {
