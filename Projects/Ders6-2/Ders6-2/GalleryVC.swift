@@ -8,26 +8,74 @@
 
 import UIKit
 
-let reuseIdentifier = "Cell"
+let reuseIdentifier = "GalleryCell"
 
-class GalleryVC: UICollectionViewController {
+class GalleryVC: UICollectionViewController, UIActionSheetDelegate {
 
+    var multimedias:Array<AnyObject>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        multimedias = gorselleriAl()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        var btnAdd = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addMultimedia")
+        self.navigationItem.rightBarButtonItem = btnAdd
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Actionsheet MEthods
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        switch buttonIndex {
+        case 1:
+            openImagePicker(UIImagePickerControllerSourceType.PhotoLibrary)
+        case 2 :
+            openImagePicker(UIImagePickerControllerSourceType.Camera)
+        default:
+            println("Vazgec")
+        }
+    }
+    
+    
+    // MARK: - Utility
+    
+    func openImagePicker(source:UIImagePickerControllerSourceType) {
+        var imagePicker = UIImagePickerController()
+        imagePicker.sourceType = source
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func addMultimedia() {
+        
+        if UIImagePickerController.isSourceTypeAvailable( UIImagePickerControllerSourceType.Camera)
+        {
+            var actionSheet = UIActionSheet(title: "Görsel Ekle", delegate: self, cancelButtonTitle: "Vazgeç", destructiveButtonTitle: nil, otherButtonTitles: "Galeri'den Al", "Kamera'dan Al")
+            actionSheet.showInView(view)
+        }
+        else {
+            openImagePicker(UIImagePickerControllerSourceType.PhotoLibrary)
+        }
+    }
+    
+    
+    func gorselleriAl() -> Array<AnyObject>? {
+        
+        var gorseller:AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("gallery")
+        return gorseller as? Array<AnyObject>
+    }
+    
+    
+    func gorselleriKaydet(gorseller:Array<AnyObject>?) {
+        
+        NSUserDefaults.standardUserDefaults().setObject(gorseller, forKey: "gallery")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -43,19 +91,24 @@ class GalleryVC: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
-        return 0
+        if multimedias == nil {
+            return 0
+        }
+        else {
+            return multimedias.count
+        }
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as GalleryCell
     
-        // Configure the cell
+        //
     
         return cell
     }

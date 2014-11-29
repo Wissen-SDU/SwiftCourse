@@ -44,14 +44,20 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jqH-lS-8Zw">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="HuN-bt-cvc">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="HuN-bt-cvc">
                                             <rect key="frame" x="18" y="18" width="64" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="64" id="Ch6-uu-cdq"/>
+                                                <constraint firstAttribute="height" constant="64" id="JzT-uc-KLz"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="HuN-bt-cvc" secondAttribute="centerX" id="BWX-JU-8ca"/>
                                     <constraint firstItem="jqH-lS-8Zw" firstAttribute="leading" secondItem="PdN-a1-uOn" secondAttribute="leading" id="U3j-0P-hQX"/>
+                                    <constraint firstAttribute="centerY" secondItem="HuN-bt-cvc" secondAttribute="centerY" id="Zf6-eS-UFu"/>
                                     <constraint firstAttribute="trailing" secondItem="jqH-lS-8Zw" secondAttribute="trailing" id="anK-TP-awd"/>
                                     <constraint firstItem="jqH-lS-8Zw" firstAttribute="top" secondItem="PdN-a1-uOn" secondAttribute="top" id="fAQ-Gf-va3"/>
                                     <constraint firstAttribute="bottom" secondItem="jqH-lS-8Zw" secondAttribute="bottom" id="qid-6z-1zz"/>
