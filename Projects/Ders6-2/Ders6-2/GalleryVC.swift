@@ -135,6 +135,7 @@ class GalleryVC: UICollectionViewController, UIActionSheetDelegate, UIImagePicke
     
         var imagePath = multimedias[indexPath.item] as String        
         cell.thumbnail.image = UIImage(contentsOfFile: imagePath)
+        cell.playImage.hidden =  true
         
         return cell
     }

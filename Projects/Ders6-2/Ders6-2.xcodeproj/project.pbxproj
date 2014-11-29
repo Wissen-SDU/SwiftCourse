@@ -16,6 +16,7 @@
 		C5FAE14B1A29ED3000D2E145 /* MyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5FAE14A1A29ED3000D2E145 /* MyView.xib */; };
 		C5FAE14D1A29ED5800D2E145 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FAE14C1A29ED5800D2E145 /* MyView.swift */; };
 		C5FAE14F1A29EF9100D2E145 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FAE14E1A29EF9100D2E145 /* GalleryCell.swift */; };
+		C5FAE1531A2A0A9700D2E145 /* tr-TR.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5FAE1511A2A0A9700D2E145 /* tr-TR.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		C5FAE14A1A29ED3000D2E145 /* MyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyView.xib; sourceTree = "<group>"; };
 		C5FAE14C1A29ED5800D2E145 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		C5FAE14E1A29EF9100D2E145 /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		C5FAE1521A2A0A9700D2E145 /* tr-TR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "tr-TR"; path = "tr-TR.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		C5FAE1251A29EB9500D2E145 /* Ders6-2 */ = {
 			isa = PBXGroup;
 			children = (
+				C5FAE1501A2A0A8000D2E145 /* tr-TR.lproj */,
 				C5FAE1281A29EB9500D2E145 /* AppDelegate.swift */,
 				C5FAE1481A29ECFF00D2E145 /* GalleryVC.swift */,
 				C5FAE12C1A29EB9500D2E145 /* Main.storyboard */,
@@ -119,6 +122,14 @@
 				C5FAE13D1A29EB9500D2E145 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5FAE1501A2A0A8000D2E145 /* tr-TR.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				C5FAE1511A2A0A9700D2E145 /* tr-TR.strings */,
+			);
+			path = "tr-TR.lproj";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"tr-TR",
 			);
 			mainGroup = C5FAE11A1A29EB9500D2E145;
 			productRefGroup = C5FAE1241A29EB9500D2E145 /* Products */;
@@ -202,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5FAE14B1A29ED3000D2E145 /* MyView.xib in Resources */,
+				C5FAE1531A2A0A9700D2E145 /* tr-TR.strings in Resources */,
 				C5FAE12E1A29EB9500D2E145 /* Main.storyboard in Resources */,
 				C5FAE1331A29EB9500D2E145 /* LaunchScreen.xib in Resources */,
 				C5FAE1301A29EB9500D2E145 /* Images.xcassets in Resources */,
@@ -262,6 +275,14 @@
 				C5FAE1321A29EB9500D2E145 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		C5FAE1511A2A0A9700D2E145 /* tr-TR.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5FAE1521A2A0A9700D2E145 /* tr-TR */,
+			);
+			name = "tr-TR.strings";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -417,6 +438,7 @@
 				C5FAE1441A29EB9500D2E145 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5FAE1451A29EB9500D2E145 /* Build configuration list for PBXNativeTarget "Ders6-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +447,7 @@
 				C5FAE1471A29EB9500D2E145 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
