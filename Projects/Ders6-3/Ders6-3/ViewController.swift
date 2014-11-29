@@ -11,24 +11,31 @@ import MediaPlayer
 
 class ViewController: UIViewController {
 
+    var moviePlayer = MPMoviePlayerController(contentURL: NSBundle.mainBundle().URLForResource("nasa", withExtension: "mp4"))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.blackColor()
         showMovie()
     }
 
     
     func showMovie() {
         
-        var moviePlayer = MPMoviePlayerController(contentURL: NSURL(string: "http://itstreaming.apple.com/podcasts/apple_keynotes/1_macworld2007.m4v"))
-        moviePlayer.movieSourceType = MPMovieSourceType.Streaming
+        moviePlayer.movieSourceType = MPMovieSourceType.File
         moviePlayer.controlStyle = MPMovieControlStyle.Fullscreen
         moviePlayer.view.frame = view.bounds
+        moviePlayer.repeatMode = MPMovieRepeatMode.One
         view.addSubview(moviePlayer.view)
         
         moviePlayer.play()
     }
-
+    
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        moviePlayer.view.frame.size = size
+    }
 
 }
 
