@@ -10,17 +10,19 @@ import UIKit
 
 let reuseIdentifier = "GalleryCell"
 
-class GalleryVC: UICollectionViewController, UIActionSheetDelegate {
+class GalleryVC: UICollectionViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var multimedias:Array<AnyObject>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        multimedias = gorselleriAl()
-
         var btnAdd = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addMultimedia")
         self.navigationItem.rightBarButtonItem = btnAdd
+        
+        multimedias = gorselleriAl()
+        collectionView.reloadData()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,11 +44,34 @@ class GalleryVC: UICollectionViewController, UIActionSheetDelegate {
     }
     
     
+    // MARK: - ImageOicker Methods
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        var image:UIImage = info[UIImagePickerControllerOriginalImage]! as UIImage
+        var pngData:NSData = UIImagePNGRepresentation(image)
+        
+        
+        var documentsPath:String = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first as String
+        
+        var filePath = documentsPath.stringByAppendingPathComponent("\(multimedias.count).png")
+        var written = pngData.writeToFile(filePath, atomically: true)
+
+        multimedias.append(filePath)
+        gorselleriKaydet(multimedias)
+        collectionView.reloadData()
+
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
     // MARK: - Utility
     
     func openImagePicker(source:UIImagePickerControllerSourceType) {
         var imagePicker = UIImagePickerController()
         imagePicker.sourceType = source
+        imagePicker.delegate = self
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
@@ -66,7 +91,7 @@ class GalleryVC: UICollectionViewController, UIActionSheetDelegate {
     func gorselleriAl() -> Array<AnyObject>? {
         
         var gorseller:AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("gallery")
-        return gorseller as? Array<AnyObject>
+        return gorseller == nil ? Array<AnyObject>() : gorseller as? Array<AnyObject>
     }
     
     
@@ -108,8 +133,9 @@ class GalleryVC: UICollectionViewController, UIActionSheetDelegate {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as GalleryCell
     
-        //
-    
+        var imagePath = multimedias[indexPath.item] as String        
+        cell.thumbnail.image = UIImage(contentsOfFile: imagePath)
+        
         return cell
     }
 
