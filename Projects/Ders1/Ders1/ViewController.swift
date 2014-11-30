@@ -25,6 +25,12 @@ class ViewController: UIViewController {
     }
 
     
+    
+    func deneme() {
+        var selamDegeri = selam()
+        print(selamDegeri)
+    }
+    
 
 
 }

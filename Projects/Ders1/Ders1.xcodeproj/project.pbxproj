@@ -15,6 +15,7 @@
 		C501A4101A2358FB002A174E /* Ders1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C501A40F1A2358FB002A174E /* Ders1Tests.swift */; };
 		C501A41A1A235BF9002A174E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C501A4191A235BF9002A174E /* MapKit.framework */; };
 		C5A2C6281A246D5600EA7024 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2C6271A246D5600EA7024 /* Test.m */; };
+		C5FAE1E01A2B0A8400D2E145 /* Deneme.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5FAE1DE1A2B0A8400D2E145 /* Deneme.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		C5A2C6251A246D5600EA7024 /* Ders1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ders1-Bridging-Header.h"; sourceTree = "<group>"; };
 		C5A2C6261A246D5600EA7024 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		C5A2C6271A246D5600EA7024 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		C5FAE1DE1A2B0A8400D2E145 /* Deneme.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deneme.cpp; sourceTree = "<group>"; };
+		C5FAE1DF1A2B0A8400D2E145 /* Deneme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deneme.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				C5A2C6261A246D5600EA7024 /* Test.h */,
 				C5A2C6271A246D5600EA7024 /* Test.m */,
 				C5A2C6251A246D5600EA7024 /* Ders1-Bridging-Header.h */,
+				C5FAE1DE1A2B0A8400D2E145 /* Deneme.cpp */,
+				C5FAE1DF1A2B0A8400D2E145 /* Deneme.h */,
 			);
 			path = Ders1;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5A2C6281A246D5600EA7024 /* Test.m in Sources */,
+				C5FAE1E01A2B0A8400D2E145 /* Deneme.cpp in Sources */,
 				C501A3FC1A2358FB002A174E /* ViewController.swift in Sources */,
 				C501A3FA1A2358FB002A174E /* AppDelegate.swift in Sources */,
 			);

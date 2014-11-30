@@ -409,6 +409,7 @@
 				C58F77CE1A247E3F009A06D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C58F77CF1A247E3F009A06D0 /* Build configuration list for PBXNativeTarget "Ders2Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				C58F77D11A247E3F009A06D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

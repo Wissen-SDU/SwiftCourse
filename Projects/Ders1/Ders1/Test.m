@@ -14,7 +14,7 @@
            soyad:(NSString *)soyad
           numara:(NSInteger)numara
 {
-    NSLog("%@ %@ %d" , isim, soyad , numara);
+    NSLog(@"%@ %@ %ld" , isim, soyad , (long)numara);
 }
 
 @end

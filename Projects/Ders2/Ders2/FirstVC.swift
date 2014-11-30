@@ -13,6 +13,30 @@ class FirstVC: UIViewController , UIAlertViewDelegate {
     @IBOutlet weak var txtUsername: UITextField!
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var launchView:UIView = NSBundle.mainBundle().loadNibNamed("LaunchScreen", owner: self, options: nil).first as UIView
+        view.addSubview(launchView)
+        launchView.frame = view.bounds
+        
+        var logoView:UIImageView? = launchView.viewWithTag(100) as? UIImageView
+        if logoView != nil {
+            
+            UIView.setAnimationBeginsFromCurrentState(true)
+            UIView.animateWithDuration(1.0, animations: { () -> Void in
+                
+                var transform = CGAffineTransformMakeScale(5.0, 5.0)
+                logoView?.transform = transform
+                launchView.alpha = 0.0
+                
+            }, completion: { (completed) -> Void in
+                launchView.removeFromSuperview()
+            })
+        }
+    }
+    
+    
     // MARK: - Action Methods
     
     @IBAction func backToFirst(segue:UIStoryboardSegue) {
