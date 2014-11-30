@@ -1,0 +1,16 @@
+PODS:
+  - Bolts (1.1.3)
+  - Facebook-iOS-SDK (3.20.0):
+    - Bolts (~> 1.0)
+  - SVProgressHUD (1.0)
+
+DEPENDENCIES:
+  - Facebook-iOS-SDK
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  Facebook-iOS-SDK: 5854404b4b651f612a8ef79ca06d766858f4cb8e
+  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
+
+COCOAPODS: 0.34.4
